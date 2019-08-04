@@ -105,7 +105,7 @@ class RecommendSongList extends StatelessWidget {
   // 推荐歌单标题
   Widget _title(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0,bottom: 20),
+      padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -135,17 +135,20 @@ class RecommendSongList extends StatelessWidget {
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Image.network(
-              item["img"],
-              width: 125,
+            Container(
+              height: 120,
+              child: Image.network(
+                item["img"],
+                width: 125,
+              ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 5,left: 10),
+              padding: EdgeInsets.only(top: 5, left: 10),
               child: Text(
-              item["desc"],
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
+                item["desc"],
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             )
           ],
         ),
@@ -168,7 +171,7 @@ class RecommendSongList extends StatelessWidget {
               _recommendItem(context, recommendList[2]),
             ],
           ),
-           Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               _recommendItem(context, recommendList[3]),
