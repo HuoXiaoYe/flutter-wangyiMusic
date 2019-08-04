@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+// 引入四个主页面
+
+import "./video/video.dart";
+import "./cloud/cloud.dart";
+import "./search/search.dart";
+import "./mine/mine.dart";
+
 class HomeContent extends StatefulWidget {
   @override
   _HomeContentState createState() => _HomeContentState();
@@ -11,7 +18,7 @@ class _HomeContentState extends State<HomeContent>
 
   @override
   void initState() {
-    _controller = new TabController(initialIndex: 1,length: 4, vsync: this);
+    _controller = new TabController(initialIndex: 1, length: 4, vsync: this);
     super.initState();
   }
 
@@ -84,13 +91,13 @@ class _HomeContentState extends State<HomeContent>
               ],
             ),
           ),
-        
+
           // 主体区域
-          TabBarView(
-            controller: _controller,
-            children: <Widget>[
-              
-            ],
+          Expanded(
+            child: TabBarView(
+              controller: _controller,
+              children: <Widget>[Mine(), Search(), Cloud(), Video()],
+            ),
           )
         ],
       ),
