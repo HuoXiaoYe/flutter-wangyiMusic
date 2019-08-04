@@ -105,7 +105,7 @@ class RecommendSongList extends StatelessWidget {
   // 推荐歌单标题
   Widget _title(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15.0, right: 15.0),
+      padding: EdgeInsets.only(left: 15.0, right: 15.0,bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -128,25 +128,25 @@ class RecommendSongList extends StatelessWidget {
   }
 
   Widget _recommendItem(BuildContext context, item) {
-    return InkWell(
+    return Center(
       child: Container(
-        width: 125,
-        height: 190,
-        color: Colors.blue,
+        width: 130,
+        height: 180,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Image.network(
               item["img"],
-              width: 95,
-              // height: 100,
-              // fit: BoxFit.fill,
+              width: 125,
             ),
-            Text(
-              item["desc"] + "akfdsujlkasjfkljasldf",
+            Padding(
+              padding: EdgeInsets.only(top: 5,left: 10),
+              child: Text(
+              item["desc"],
               maxLines: 2,
-              // overflow: TextOverflow.ellipsis,
+              overflow: TextOverflow.ellipsis,
             ),
+            )
           ],
         ),
       ),
@@ -156,23 +156,39 @@ class RecommendSongList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
-      color: Colors.green,
+      height: 600,
       child: Column(
         children: <Widget>[
           _title(context),
-          Container(
-            height: 300,
-            width: 600,
-            color: Colors.red,
-            child: GridView.count(
-              scrollDirection: Axis.vertical,
-              crossAxisCount: 3,
-              children: recommendList
-                  .map((item) => _recommendItem(context, item))
-                  .toList()
-            ),
-          )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              _recommendItem(context, recommendList[0]),
+              _recommendItem(context, recommendList[1]),
+              _recommendItem(context, recommendList[2]),
+            ],
+          ),
+           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              _recommendItem(context, recommendList[3]),
+              _recommendItem(context, recommendList[4]),
+              _recommendItem(context, recommendList[5]),
+            ],
+          ),
+          // Container(
+          //   height: 2300,
+          //   width: 750,
+          //   color: Colors.red,
+          //   child: GridView.count(
+          //     physics: new NeverScrollableScrollPhysics(),
+          //     scrollDirection: Axis.vertical,
+          //     crossAxisCount: 2,
+          //     children: recommendList
+          //         .map((item) => _recommendItem(context, item))
+          //         .toList()
+          //   ),
+          // )
         ],
       ),
     );
