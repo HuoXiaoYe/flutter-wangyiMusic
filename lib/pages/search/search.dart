@@ -13,7 +13,7 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[Wriper(wriperList)],
+      children: <Widget>[Wriper(wriperList), NavBar(navList)],
     );
   }
 }
@@ -23,7 +23,7 @@ class _SearchState extends State<Search> {
 class Wriper extends StatelessWidget {
   //
   List WriperList;
-  Wriper(this.WriperList):super();
+  Wriper(this.WriperList) : super();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +40,53 @@ class Wriper extends StatelessWidget {
         itemWidth: 300.0,
         viewportFraction: 0.85,
         scale: 0.9,
-        
+        autoplay: true,
+      ),
+    );
+  }
+}
+
+// 导航栏
+
+class NavBar extends StatelessWidget {
+  List navList;
+  NavBar(this.navList) : super();
+  // 每一个item
+
+  Widget _navItem(context, item) {
+    return InkWell(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                color: Colors.black12
+              ),
+              child: ClipOval(
+                child: Image.network(item["img"], width: 60),
+              )),
+          Text(item["desc"])
+        ],
+      ),
+      onTap: (){
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 20.0, bottom: 10),
+      decoration: BoxDecoration(
+          border:
+              Border(bottom: BorderSide(width: 0.5, color: Colors.black38))),
+      height: 110.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: navList.map((item) => _navItem(context, item)).toList(),
       ),
     );
   }
