@@ -9,7 +9,8 @@ class _MineState extends State<Mine> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Mine"),
+      
+      // child: Text("Mine"),
     );
   }
 }
