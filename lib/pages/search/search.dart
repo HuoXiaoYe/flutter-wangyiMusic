@@ -18,6 +18,8 @@ class _SearchState extends State<Search> {
           Wriper(wriperList), // 轮播图
           NavBar(navList), // 导航
           RecommendSongList("推荐歌单", "歌单广场", recommendList), // 推荐歌单
+          Split(),
+          NewSong("新碟", "更多新碟", newSongList)
         ],
       ),
     );
@@ -150,10 +152,17 @@ class RecommendSongList extends StatelessWidget {
                 ),
                 Positioned(
                   right: 4,
-                  child:Row(
+                  child: Row(
                     children: <Widget>[
-                      Icon(Icons.playlist_play,size: 14,),
-                      Text(item["count"],style: TextStyle(fontSize: 10,fontWeight: FontWeight.w400),)
+                      Icon(
+                        Icons.playlist_play,
+                        size: 14,
+                      ),
+                      Text(
+                        item["count"],
+                        style: TextStyle(
+                            fontSize: 10, fontWeight: FontWeight.w400),
+                      )
                     ],
                   ),
                 )
@@ -189,6 +198,86 @@ class RecommendSongList extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class Split extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 10,
+      color: Colors.black12,
+    );
+  }
+}
+
+// 新歌
+
+class NewSong extends StatelessWidget {
+  String str1;
+  String str2;
+  List newSongList;
+  NewSong(this.str1, this.str2, this.newSongList) : super();
+
+  // 标题
+  Widget _title(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(
+            str1,
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 8),
+            padding: EdgeInsets.only(bottom: 3, top: 3, left: 10, right: 10),
+            child: InkWell(
+              child: Text(str2),
+            ),
+            decoration: BoxDecoration(
+                color: Colors.black12,
+                borderRadius: BorderRadius.all(Radius.circular(15))),
+          )
+        ],
+      ),
+    );
+  }
+
+  // 每一个item
+  Widget _songItem(BuildContext context, item) {
+    return Container(
+        width: 130.0,
+        height: 160.0,
+        // color: Colors.yellowAccent,
+        child: Card(
+          child: InkWell(
+            onTap: () {},
+            child: Column(
+              children: <Widget>[
+                Image.network(item['img']),
+                Text(item['desc'])
+              ],
+            ),
+          ),
+        ));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        _title(context),
+        Card(
+          child: Wrap(
+            spacing: 3,
+            children:
+                newSongList.map((item) => _songItem(context, item)).toList(),
+          ),
+        )
+      ],
     );
   }
 }

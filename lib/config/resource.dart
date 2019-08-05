@@ -72,3 +72,28 @@ List recommendList = [
     "count": "153万"
   }
 ];
+
+
+
+
+
+List newSongList = [
+  {
+    "desc": "王一博热门新歌",
+    "img":
+        "http://p.qpic.cn/music_cover/8icT3FJia3icDlR3nFE4vFIyd2tNho7tqTNyof0T1cmZJaibibIErUIVialQ/300?n=1",
+
+  },
+  {
+    "desc": "第三个酒吧",
+    "img":
+        "http://p.qpic.cn/music_cover/Uj77DagTFgiccudSicYvppRps3XU1ib4YFHdmTnkACW9L85ZXEkkkAUmA/300?n=1",
+
+  },
+  {
+    "desc": "第二个酒吧",
+    "img":
+        "http://p.qpic.cn/music_cover/bglUEFSMMhA3eiblfHXvQRPLWicw02rzkpicmbqtaibV7MbEVruOa5g59A/300?n=1",
+
+  }
+];
