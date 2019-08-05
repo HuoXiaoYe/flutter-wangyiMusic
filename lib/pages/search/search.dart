@@ -15,9 +15,9 @@ class _SearchState extends State<Search> {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Wriper(wriperList),
-          NavBar(navList),
-          RecommendSongList(recommendList),
+          Wriper(wriperList), // 轮播图
+          NavBar(navList), // 导航
+          RecommendSongList("推荐歌单","歌单广场",recommendList), // 推荐歌单
         ],
       ),
     );
@@ -100,7 +100,10 @@ class NavBar extends StatelessWidget {
 
 class RecommendSongList extends StatelessWidget {
   List recommendList;
-  RecommendSongList(this.recommendList) : super();
+  String str1;
+  String str2;
+
+  RecommendSongList(this.str1,this.str2,this.recommendList) : super();
 
   // 推荐歌单标题
   Widget _title(BuildContext context) {
@@ -110,13 +113,14 @@ class RecommendSongList extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Text(
-            "推荐歌单",
+            str1,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
           ),
           Container(
+            margin: EdgeInsets.only(top: 8),
             padding: EdgeInsets.only(bottom: 3, top: 3, left: 10, right: 10),
             child: InkWell(
-              child: Text("歌单广场"),
+              child: Text(str2),
             ),
             decoration: BoxDecoration(
                 color: Colors.black12,
@@ -128,7 +132,7 @@ class RecommendSongList extends StatelessWidget {
   }
 
   Widget _recommendItem(BuildContext context, item) {
-    return Center(
+    return InkWell(
       child: Container(
         width: 130,
         height: 180,
@@ -153,6 +157,9 @@ class RecommendSongList extends StatelessWidget {
           ],
         ),
       ),
+      onTap: (){
+        
+      },
     );
   }
 
@@ -163,35 +170,10 @@ class RecommendSongList extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _title(context),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              _recommendItem(context, recommendList[0]),
-              _recommendItem(context, recommendList[1]),
-              _recommendItem(context, recommendList[2]),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              _recommendItem(context, recommendList[3]),
-              _recommendItem(context, recommendList[4]),
-              _recommendItem(context, recommendList[5]),
-            ],
-          ),
-          // Container(
-          //   height: 2300,
-          //   width: 750,
-          //   color: Colors.red,
-          //   child: GridView.count(
-          //     physics: new NeverScrollableScrollPhysics(),
-          //     scrollDirection: Axis.vertical,
-          //     crossAxisCount: 2,
-          //     children: recommendList
-          //         .map((item) => _recommendItem(context, item))
-          //         .toList()
-          //   ),
-          // )
+          Wrap(
+            spacing: 3,
+            children: recommendList.map((item)=>_recommendItem(context, item)).toList(),
+          )
         ],
       ),
     );
