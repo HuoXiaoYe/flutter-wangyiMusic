@@ -97,3 +97,36 @@ List newSongList = [
 
   }
 ];
+
+List goodSongList = [
+  {
+    "title":"快来为你的TA应援吧",
+    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622430.jpg?max_age=2592000"
+  },
+  {
+    "title":"快来为你的TA应援吧",
+    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622071.jpg?max_age=2592000"
+  },
+  {
+    "title":"快来为你的TA应援吧",
+    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622519.jpg?max_age=2592000"
+  },
+  {
+    "title":"快来为你的TA应援吧",
+    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1625053.jpg?max_age=2592000"
+  },
+  {
+    "title":"快来为你的TA应援吧",
+    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1628863.jpg?max_age=2592000"
+  },
+  {
+    "title":"快来为你的TA应援吧",
+    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1628227.jpg?max_age=2592000"
+  }
+];

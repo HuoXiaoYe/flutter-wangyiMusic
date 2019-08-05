@@ -19,7 +19,9 @@ class _SearchState extends State<Search> {
           NavBar(navList), // 导航
           RecommendSongList("推荐歌单", "歌单广场", recommendList), // 推荐歌单
           Split(),
-          NewSong("新碟", "更多新碟", newSongList)
+          NewSong("新碟", "更多新碟", newSongList),
+          Split(),
+          GoodSongs(goodSongList),
         ],
       ),
     );
@@ -278,6 +280,91 @@ class NewSong extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+// 云村精选
+
+class GoodSongs extends StatelessWidget {
+  List goodSongList;
+  GoodSongs(this.goodSongList) : super();
+  @override
+  Widget build(BuildContext context) {
+    Widget _title(BuildContext context) {
+      return Container(
+        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+        decoration: BoxDecoration(
+            border:
+                Border(bottom: BorderSide(width: 0.5, color: Colors.black38))),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              "云村精选",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+            ),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.refresh,
+                  size: 18,
+                  color: Colors.black54,
+                ),
+                Text(
+                  "获取新内容",
+                  style: TextStyle(color: Colors.black54),
+                )
+              ],
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget _songItem(BuildContext context, item) {
+      return Card(
+          child: Padding(
+        padding: EdgeInsets.only(left: 10, right: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(top: 10, bottom: 10),
+              child: Text(
+                item["title"],
+                textAlign: TextAlign.left,
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(15))),
+              child: ClipRRect(
+                // clipper:CustomClipper(),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                child: Image.network(
+                  item['img'],
+                ),
+              ),
+            ),
+            Text(item["desc"]),
+          ],
+        ),
+      ));
+    }
+
+    return Container(
+      width: 500,
+      height: 1400,
+      child: Column(
+        children: <Widget>[
+          _title(context),
+          Column(
+            children:
+                goodSongList.map((item) => _songItem(context, item)).toList(),
+          )
+        ],
+      ),
     );
   }
 }
