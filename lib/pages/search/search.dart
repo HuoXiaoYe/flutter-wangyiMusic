@@ -17,7 +17,7 @@ class _SearchState extends State<Search> {
         children: <Widget>[
           Wriper(wriperList), // 轮播图
           NavBar(navList), // 导航
-          RecommendSongList("推荐歌单","歌单广场",recommendList), // 推荐歌单
+          RecommendSongList("推荐歌单", "歌单广场", recommendList), // 推荐歌单
         ],
       ),
     );
@@ -103,7 +103,7 @@ class RecommendSongList extends StatelessWidget {
   String str1;
   String str2;
 
-  RecommendSongList(this.str1,this.str2,this.recommendList) : super();
+  RecommendSongList(this.str1, this.str2, this.recommendList) : super();
 
   // 推荐歌单标题
   Widget _title(BuildContext context) {
@@ -139,12 +139,25 @@ class RecommendSongList extends StatelessWidget {
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              height: 120,
-              child: Image.network(
-                item["img"],
-                width: 125,
-              ),
+            Stack(
+              children: <Widget>[
+                Container(
+                  height: 120,
+                  child: Image.network(
+                    item["img"],
+                    width: 125,
+                  ),
+                ),
+                Positioned(
+                  right: 4,
+                  child:Row(
+                    children: <Widget>[
+                      Icon(Icons.playlist_play,size: 14,),
+                      Text(item["count"],style: TextStyle(fontSize: 10,fontWeight: FontWeight.w400),)
+                    ],
+                  ),
+                )
+              ],
             ),
             Padding(
               padding: EdgeInsets.only(top: 5, left: 10),
@@ -157,22 +170,22 @@ class RecommendSongList extends StatelessWidget {
           ],
         ),
       ),
-      onTap: (){
-        
-      },
+      onTap: () {},
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: 410,
       child: Column(
         children: <Widget>[
           _title(context),
           Wrap(
             spacing: 3,
-            children: recommendList.map((item)=>_recommendItem(context, item)).toList(),
+            children: recommendList
+                .map((item) => _recommendItem(context, item))
+                .toList(),
           )
         ],
       ),
