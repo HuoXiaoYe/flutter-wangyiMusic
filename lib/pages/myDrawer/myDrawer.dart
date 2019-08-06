@@ -9,10 +9,10 @@ class MyDrawer extends StatelessWidget {
       
         // 个人信息区域
         Stack(
-          alignment: FractionalOffset(0, 1.2),
+          alignment: FractionalOffset(0, 1.3),
           children: <Widget>[
             Container(
-              height: 240,
+              height: 180,
               padding: EdgeInsets.only(bottom: 15),
               color: Color.fromRGBO(214, 216, 215, 1),
               child: Column(
