@@ -7,6 +7,10 @@ import "./cloud/cloud.dart";
 import "./search/search.dart";
 import "./mine/mine.dart";
 
+// 引入侧抽屉页面
+
+import "./myDrawer/myDrawer.dart";
+
 class HomeContent extends StatefulWidget {
   @override
   _HomeContentState createState() => _HomeContentState();
@@ -98,9 +102,11 @@ class _HomeContentState extends State<HomeContent>
               controller: _controller,
               children: <Widget>[Mine(), Search(), Cloud(), Video()],
             ),
-          )
+          ),
+         
         ],
       ),
+       drawer: MyDrawer(),
     );
   }
 }

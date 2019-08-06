@@ -333,7 +333,7 @@ class GoodSongs extends StatelessWidget {
               padding: EdgeInsets.only(top: 10, bottom: 10),
               child: Text(
                 item["title"],
-                style: TextStyle(fontSize: 15.0,color: Colors.black54),
+                style: TextStyle(fontSize: 14.0,color: Colors.black54),
               ),
             ),
             Container(
@@ -351,7 +351,7 @@ class GoodSongs extends StatelessWidget {
               padding: EdgeInsets.only(top: 10, bottom: 10),
               child: Text(
                 item["desc"],
-                style: TextStyle(fontSize: 18.0,color: Colors.black,fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 16.0,color: Colors.black,fontWeight: FontWeight.w500),
               ),
             ),
           ],
@@ -361,7 +361,7 @@ class GoodSongs extends StatelessWidget {
 
     return Container(
       width: 500,
-      height: 1550,
+      height: 1535,
       child: Column(
         children: <Widget>[
           _title(context),
