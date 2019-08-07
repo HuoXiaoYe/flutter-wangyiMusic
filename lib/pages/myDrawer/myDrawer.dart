@@ -13,6 +13,7 @@ class MyDrawer extends StatelessWidget {
           padding: EdgeInsets.only(top: 6),
         ),
         ColumnNav(), // 纵列列表导航
+        Divider(indent: 12, endIndent: 12, color: Colors.black87),
         MyBottomAppBar() // 底部设置
       ],
     ));
@@ -274,9 +275,11 @@ class MyBottomAppBar extends StatelessWidget {
           ),
           InkWell(
             onTap: (){},
-            child: Row(
+            child:Padding(
+              padding: EdgeInsets.only(top: 3),
+              child: Row(
               children: <Widget>[Icon(Icons.settings), Container(width: 3,) ,Text("设置")],
-            ),
+            ),),
           ),
           InkWell(
             onTap: (){},
