@@ -12,7 +12,8 @@ class MyDrawer extends StatelessWidget {
           child: Divider(indent: 12, endIndent: 12, color: Colors.black87),
           padding: EdgeInsets.only(top: 6),
         ),
-        ColumnNav() // 纵列列表导航
+        ColumnNav(), // 纵列列表导航
+        MyBottomAppBar() // 底部设置
       ],
     ));
   }
@@ -231,7 +232,7 @@ class ColumnNav extends StatelessWidget {
       margin: EdgeInsets.only(left: 20),
       child: Row(
         children: <Widget>[
-          Icon(Icons.shop,color:Colors.black38),
+          Icon(Icons.shop, color: Colors.black38),
           // Icon(columnNavList[index]["icon"]),
           Padding(
             padding: EdgeInsets.only(left: 6),
@@ -248,12 +249,42 @@ class ColumnNav extends StatelessWidget {
     return Container(
       height: 330,
       child: ListView.builder(
-        padding:EdgeInsets.only(top: 0),
+        padding: EdgeInsets.only(top: 0),
         itemCount: columnNavList.length,
         itemBuilder: (context, index) {
           return _columnNavItem(context, index);
         },
       ),
+    );
+  }
+}
+
+class MyBottomAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          InkWell(
+            onTap: (){},
+            child: Row(
+              children: <Widget>[Icon(Icons.mood), Container(width: 3,) ,Text("夜间模式")],
+            ),
+          ),
+          InkWell(
+            onTap: (){},
+            child: Row(
+              children: <Widget>[Icon(Icons.settings), Container(width: 3,) ,Text("设置")],
+            ),
+          ),
+          InkWell(
+            onTap: (){},
+            child: Row(
+              children: <Widget>[Icon(Icons.all_out), Container(width: 3,) ,Text("退出")],
+            ),
+          )
+        ],
     );
   }
 }
