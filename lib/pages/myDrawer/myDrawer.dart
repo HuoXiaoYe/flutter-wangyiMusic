@@ -12,6 +12,7 @@ class MyDrawer extends StatelessWidget {
           child: Divider(indent: 12, endIndent: 12, color: Colors.black87),
           padding: EdgeInsets.only(top: 6),
         ),
+        ColumnNav() // 纵列列表导航
       ],
     ));
   }
@@ -200,6 +201,58 @@ class DrawerNav extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+// 纵列列表导航
+
+class ColumnNav extends StatelessWidget {
+  List<Map> columnNavList = [
+    {"title": "演出", "icon": "Icons.shop"},
+    {"title": "商城", "icon": "Icons.shop"},
+    {"title": "附近的人", "icon": "Icons.shop"},
+    {"title": "口袋铃声", "icon": "Icons.shop"},
+    {"title": "我的订单", "icon": "Icons.shop"},
+    {"title": "定是停止播放", "icon": "Icons.shop"},
+    {"title": "扫一扫", "icon": "Icons.shop"},
+    {"title": "音乐闹钟", "icon": "Icons.shop"},
+    {"title": "音乐云盘", "icon": "Icons.shop"},
+    {"title": "在线听歌免流量", "icon": "Icons.shop"},
+    {"title": "附近的人", "icon": "Icons.shop"},
+    {"title": "口袋铃声", "icon": "Icons.shop"},
+    {"title": "我的订单", "icon": "Icons.shop"},
+  ];
+
+  Widget _columnNavItem(BuildContext context, index) {
+    return Container(
+      height: 40,
+      margin: EdgeInsets.only(left: 20),
+      child: Row(
+        children: <Widget>[
+          Icon(Icons.shop,color:Colors.black38),
+          // Icon(columnNavList[index]["icon"]),
+          Padding(
+            padding: EdgeInsets.only(left: 6),
+            child: Text(columnNavList[index]["title"]),
+          )
+          // Text("你好"),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 330,
+      child: ListView.builder(
+        padding:EdgeInsets.only(top: 0),
+        itemCount: columnNavList.length,
+        itemBuilder: (context, index) {
+          return _columnNavItem(context, index);
+        },
       ),
     );
   }
