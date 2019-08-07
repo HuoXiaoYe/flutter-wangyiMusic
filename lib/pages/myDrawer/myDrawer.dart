@@ -7,7 +7,11 @@ class MyDrawer extends StatelessWidget {
         child: Column(
       children: <Widget>[
         DrawerHeaderInfo(), // 个人信息区域
-        DrawerNav(),
+        DrawerNav(), // 侧抽屉导航
+        Padding(
+          child: Divider(indent: 12, endIndent: 12, color: Colors.black87),
+          padding: EdgeInsets.only(top: 6),
+        ),
       ],
     ));
   }
@@ -153,7 +157,7 @@ class DrawerNav extends StatelessWidget {
             onTap: () {},
             child: Column(
               children: <Widget>[
-                Padding(padding: EdgeInsets.only(left:15)),
+                Padding(padding: EdgeInsets.only(left: 15)),
                 Icon(Icons.child_friendly, color: Colors.red),
                 Container(
                   height: 6,
@@ -195,7 +199,6 @@ class DrawerNav extends StatelessWidget {
               ],
             ),
           ),
-          Divider()
         ],
       ),
     );
