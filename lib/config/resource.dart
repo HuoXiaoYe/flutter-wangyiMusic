@@ -172,3 +172,11 @@ List<Map> mineNavList = [
         "http://y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
   }
 ];
+
+List<Map> mineMusicList = [
+  {"title": "本地音乐", "desc": "206"},
+  {"title": "最近播放", "desc": "101"},
+  {"title": "下载管理", "desc": "205"},
+  {"title": "我的电台", "desc": "0"},
+  {"title": "我的收藏", "desc": "专辑/歌手视频/专栏/Mlog"}
+];

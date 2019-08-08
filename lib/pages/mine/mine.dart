@@ -18,6 +18,7 @@ class _MineState extends State<Mine> {
           height: 5,
           color: Colors.black54,
         ),
+        MyMusicDesc(), // 个人音乐描述列表
       ],
     ));
   }
@@ -41,7 +42,10 @@ class NavTabbar extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(top: 10),
-              child: Text(mineNavList[index]["title"],style: TextStyle(color: Colors.black54),),
+              child: Text(
+                mineNavList[index]["title"],
+                style: TextStyle(color: Colors.black54),
+              ),
             )
           ],
         ),
@@ -59,6 +63,41 @@ class NavTabbar extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: mineNavList.length,
         itemBuilder: (context, index) => _navItem(index),
+      ),
+    );
+  }
+}
+
+class MyMusicDesc extends StatelessWidget {
+  Widget _descItem(item) {
+    return Container(
+      height: 50,
+      child: Row(
+        children: <Widget>[
+          Icon(Icons.music_video),
+          Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Text(item['title']),
+                  Text("(${item['desc']})")
+                ],
+              ),
+              Divider(
+                color: Colors.black,
+              )
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: mineMusicList.map((item) => _descItem(item)).toList(),
       ),
     );
   }
