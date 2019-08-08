@@ -71,23 +71,32 @@ class NavTabbar extends StatelessWidget {
 class MyMusicDesc extends StatelessWidget {
   Widget _descItem(item) {
     return Container(
+      alignment: Alignment.centerLeft,
+      margin: EdgeInsets.only(left: 10),
       height: 50,
       child: Row(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Icon(Icons.music_video),
-          Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Text(item['title']),
-                  Text("(${item['desc']})")
-                ],
-              ),
-              Divider(
-                color: Colors.black,
-              )
-            ],
-          )
+          Icon(
+            Icons.music_video,
+            size: 30,
+          ),
+          Expanded(
+            child: Container(
+                margin: EdgeInsets.only(left: 10, top: 4),
+                padding: EdgeInsets.only(bottom: 15),
+                child: Row(
+                  children: <Widget>[
+                    Text(item['title']),
+                    Text("(${item['desc']})")
+                  ],
+                ),
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom:
+                            BorderSide(width: 0.5, color: Colors.black12)))),
+          ),
         ],
       ),
     );
@@ -96,6 +105,7 @@ class MyMusicDesc extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 15),
       child: Column(
         children: mineMusicList.map((item) => _descItem(item)).toList(),
       ),
