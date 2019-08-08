@@ -142,13 +142,19 @@ class FoldList extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         title: Text("${item['title']}"),
-        // children: item.child.map((item)=>_foldItemChild(item)).toList(),
+        // children: item["child"].map((item)=>_foldItemChild(item)),
+        children: <Widget>[
+          _foldItemChild(item["child"][0]),
+          _foldItemChild(item["child"][1]),
+          _foldItemChild(item["child"][2]),
+        ],
       ),
     );
   }
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 200,
       // margin: EdgeInsets.only(top: 10),
       child: Column(
         children: mineFoldList.map((item)=>_foldItem(item)).toList(),
