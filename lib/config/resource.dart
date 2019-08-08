@@ -149,7 +149,7 @@ List<Map> mineNavList = [
   {
     "title": "私藏推荐",
     "img":
-        "http:////y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
   },
   {
     "title": "私人FM",
@@ -169,6 +169,6 @@ List<Map> mineNavList = [
   {
     "title": "私藏推荐",
     "img":
-        "http:////y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
   }
 ];
