@@ -154,7 +154,7 @@ List<Map> mineNavList = [
   {
     "title": "私人FM",
     "img":
-        "http://y.gtimg.cn/music/photo_new/T002R300x300M000002uHOkQ1JExxe.jpg?max_age=2592000"
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000004HilA03q4TnI.jpg?max_age=2592000"
   },
   {
     "title": "最新电音",
