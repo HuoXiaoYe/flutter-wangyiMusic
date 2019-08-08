@@ -89,7 +89,7 @@ class MyMusicDesc extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Text(item['title']),
-                    Text("(${item['desc']})")
+                    Padding(padding: EdgeInsets.only(left: 10),child: Text("(${item['desc']})",style: TextStyle(color: Colors.black45),),)
                   ],
                 ),
                 decoration: BoxDecoration(
