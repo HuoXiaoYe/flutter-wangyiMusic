@@ -208,17 +208,17 @@ List<Map> mineFoldList = [
     "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
     "child" : [
       {
-        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000001YhoWf2XcCS7.jpg?max_age=2592000",
         "title":"我特别喜欢的音乐",
         "desc":"57首，已下载25首"
       },
       {
-        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000001YhoWf2XcCS7.jpg?max_age=2592000",
         "title":"我特别喜欢的音乐",
         "desc":"57首，已下载25首"
       },
       {
-        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000001YhoWf2XcCS7.jpg?max_age=2592000",
         "title":"我特别喜欢的音乐",
         "desc":"57首，已下载25首"
       }

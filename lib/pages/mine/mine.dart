@@ -11,7 +11,7 @@ class _MineState extends State<Mine> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
+        child: ListView(
       children: <Widget>[
         NavTabbar(), // 顶部导航栏
         Divider(
@@ -19,10 +19,7 @@ class _MineState extends State<Mine> {
           color: Colors.black54,
         ),
         MyMusicDesc(), // 个人音乐描述列表
-        Container(
-          height: 10,
-          color: Colors.black12
-        ),
+        Container(height: 10, color: Colors.black12),
         FoldList(),
       ],
     ));
@@ -77,7 +74,7 @@ class MyMusicDesc extends StatelessWidget {
   Widget _descItem(item) {
     return Container(
       alignment: Alignment.centerLeft,
-      margin: EdgeInsets.only(left: 10,top: 8),
+      margin: EdgeInsets.only(left: 10, top: 8),
       // height: 50,
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +91,13 @@ class MyMusicDesc extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Text(item['title']),
-                    Padding(padding: EdgeInsets.only(left: 10),child: Text("(${item['desc']})",style: TextStyle(color: Colors.black45),),)
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        "(${item['desc']})",
+                        style: TextStyle(color: Colors.black45),
+                      ),
+                    )
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -118,22 +121,24 @@ class MyMusicDesc extends StatelessWidget {
   }
 }
 
-
-
 // 折叠菜单
 
 class FoldList extends StatelessWidget {
-
-
-  Widget _foldItemChild(item){
-    return ListTile(
-      leading: Image.network(item["img"]),
-      title: Text(item["title"]),
-      subtitle: Text(item['desc']),
+  Widget _foldItemChild(item) {
+    return Container(
+      padding: EdgeInsets.only(left: 20),
+      child: ListTile(
+        leading: ClipRRect(
+          child: Image.network(item["img"]),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        title: Text(item["title"]),
+        subtitle: Text(item['desc']),
+      ),
     );
   }
 
-  Widget _foldItem(item){
+  Widget _foldItem(item) {
     return Container(
       margin: EdgeInsets.only(top: 15),
       child: ExpansionTile(
@@ -151,13 +156,14 @@ class FoldList extends StatelessWidget {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      // height: 800,
       // margin: EdgeInsets.only(top: 10),
       child: Column(
-        children: mineFoldList.map((item)=>_foldItem(item)).toList(),
+        children: mineFoldList.map((item) => _foldItem(item)).toList(),
       ),
     );
   }
