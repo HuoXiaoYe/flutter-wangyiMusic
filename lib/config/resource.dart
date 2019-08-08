@@ -39,7 +39,7 @@ List recommendList = [
     "desc": "正能量，拒绝低谷时的丧气值",
     "img":
         "http://p.qpic.cn/music_cover/bglUEFSMMhA3eiblfHXvQRPLWicw02rzkpicmbqtaibV7MbEVruOa5g59A/300?n=1",
-    "count":"87万"
+    "count": "87万"
   },
   {
     "desc": "正能量，拒绝低谷时的丧气值",
@@ -73,60 +73,102 @@ List recommendList = [
   }
 ];
 
-
-
-
-
 List newSongList = [
   {
     "desc": "王一博热门新歌",
     "img":
         "http://p.qpic.cn/music_cover/8icT3FJia3icDlR3nFE4vFIyd2tNho7tqTNyof0T1cmZJaibibIErUIVialQ/300?n=1",
-
   },
   {
     "desc": "第三个酒吧",
     "img":
         "http://p.qpic.cn/music_cover/Uj77DagTFgiccudSicYvppRps3XU1ib4YFHdmTnkACW9L85ZXEkkkAUmA/300?n=1",
-
   },
   {
     "desc": "第二个酒吧",
     "img":
         "http://p.qpic.cn/music_cover/bglUEFSMMhA3eiblfHXvQRPLWicw02rzkpicmbqtaibV7MbEVruOa5g59A/300?n=1",
-
   }
 ];
 
 List goodSongList = [
   {
-    "title":"快来为你的TA应援吧",
-    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
-    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622430.jpg?max_age=2592000"
+    "title": "快来为你的TA应援吧",
+    "desc": "星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":
+        "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622430.jpg?max_age=2592000"
   },
   {
-    "title":"快来为你的TA应援吧",
-    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
-    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622071.jpg?max_age=2592000"
+    "title": "快来为你的TA应援吧",
+    "desc": "星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":
+        "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622071.jpg?max_age=2592000"
   },
   {
-    "title":"快来为你的TA应援吧",
-    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
-    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622519.jpg?max_age=2592000"
+    "title": "快来为你的TA应援吧",
+    "desc": "星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":
+        "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1622519.jpg?max_age=2592000"
   },
   {
-    "title":"快来为你的TA应援吧",
-    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
-    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1625053.jpg?max_age=2592000"
+    "title": "快来为你的TA应援吧",
+    "desc": "星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":
+        "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1625053.jpg?max_age=2592000"
   },
   {
-    "title":"快来为你的TA应援吧",
-    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
-    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1628863.jpg?max_age=2592000"
+    "title": "快来为你的TA应援吧",
+    "desc": "星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":
+        "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1628863.jpg?max_age=2592000"
   },
   {
-    "title":"快来为你的TA应援吧",
-    "desc":"星云人气榜周榜冠军公布，支持你的爱豆",
-    "img":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1628227.jpg?max_age=2592000"
+    "title": "快来为你的TA应援吧",
+    "desc": "星云人气榜周榜冠军公布，支持你的爱豆",
+    "img":
+        "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1628227.jpg?max_age=2592000"
+  }
+];
+
+List<Map> mineNavList = [
+  {
+    "title": "私人FM",
+    "img":
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000002uHOkQ1JExxe.jpg?max_age=2592000"
+  },
+  {
+    "title": "最新电音",
+    "img":
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000004DGtz42q8o6x.jpg?max_age=2592000"
+  },
+  {
+    "title": "Sati空间",
+    "img":
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000001E2e6h0UKviX.jpg?max_age=2592000"
+  },
+  {
+    "title": "私藏推荐",
+    "img":
+        "http:////y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
+  },
+  {
+    "title": "私人FM",
+    "img":
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000002uHOkQ1JExxe.jpg?max_age=2592000"
+  },
+  {
+    "title": "最新电音",
+    "img":
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000004DGtz42q8o6x.jpg?max_age=2592000"
+  },
+  {
+    "title": "Sati空间",
+    "img":
+        "http://y.gtimg.cn/music/photo_new/T002R300x300M000001E2e6h0UKviX.jpg?max_age=2592000"
+  },
+  {
+    "title": "私藏推荐",
+    "img":
+        "http:////y.gtimg.cn/music/photo_new/T002R300x300M000003JAVRs4aD6Ha.jpg?max_age=2592000"
   }
 ];
