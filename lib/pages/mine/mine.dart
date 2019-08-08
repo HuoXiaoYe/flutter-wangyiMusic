@@ -126,7 +126,7 @@ class MyMusicDesc extends StatelessWidget {
 class FoldList extends StatelessWidget {
   Widget _foldItemChild(item) {
     return Container(
-      padding: EdgeInsets.only(left: 20),
+      padding: EdgeInsets.only(left: 20, top: 5),
       child: ListTile(
         leading: ClipRRect(
           child: Image.network(item["img"]),
@@ -142,9 +142,12 @@ class FoldList extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 15),
       child: ExpansionTile(
-        leading: ClipRRect(
-          child: Image.network(item["img"]),
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+        leading: Container(
+          margin: EdgeInsets.only(top: 8),
+          child: ClipRRect(
+            child: Image.network(item["img"]),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
         ),
         title: Text("${item['title']}"),
         // children: item["child"].map((item)=>_foldItemChild(item)),
