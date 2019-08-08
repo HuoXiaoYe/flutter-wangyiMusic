@@ -180,3 +180,48 @@ List<Map> mineMusicList = [
   {"title": "我的电台", "desc": "0"},
   {"title": "我的收藏", "desc": "专辑/歌手视频/专栏/Mlog"}
 ];
+
+List<Map> mineFoldList = [
+  {
+    "title":"创建的歌单",
+    "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000001YhoWf2XcCS7.jpg?max_age=2592000",
+    "child" : [
+      {
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "title":"我喜欢的音乐",
+        "desc":"32首，已下载30首"
+      },
+      {
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "title":"我喜欢的音乐",
+        "desc":"32首，已下载30首"
+      },
+      {
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "title":"我喜欢的音乐",
+        "desc":"32首，已下载30首"
+      }
+    ],
+  },
+  {
+    "title":"收藏的歌单",
+    "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+    "child" : [
+      {
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "title":"我特别喜欢的音乐",
+        "desc":"57首，已下载25首"
+      },
+      {
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "title":"我特别喜欢的音乐",
+        "desc":"57首，已下载25首"
+      },
+      {
+        "img":"http://y.gtimg.cn/music/photo_new/T002R90x90M000000kDo073h4HlC.jpg?max_age=2592000",
+        "title":"我特别喜欢的音乐",
+        "desc":"57首，已下载25首"
+      }
+    ],
+  }
+];
