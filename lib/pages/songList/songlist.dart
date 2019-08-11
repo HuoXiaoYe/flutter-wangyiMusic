@@ -152,90 +152,161 @@ class Intro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      padding: EdgeInsets.only(top: 40),
+      height: 335,
       color: Color.fromRGBO(54, 53, 61, 0.5),
-      child: Row(
+      // color: Colors.pink,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            margin: EdgeInsets.only(left: 20, top: 15),
-            alignment: Alignment.center,
-            height: 300,
-            width: 150,
-            child: Stack(
+          Row( // 顶部下方图片文字
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 15),
+                alignment: Alignment.center,
+                height: 150,
+                width: 150,
+                // color: Colors.red,
+                child: Stack(
+                  children: <Widget>[
+                    ClipRRect(
+                      child: Image.network(
+                        "http://p.qpic.cn/music_cover/HZnqT8B6sibc2iaxSb6biaOAReu5nQvU4LNMd9kQDCaCWmlxJnVPPKnQA/300?n=1",
+                        // width: 300,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    Positioned(
+                      left: 10,
+                      top: 10,
+                      child: Text("VIP",
+                          style: TextStyle(color: Colors.white, fontSize: 14)),
+                    ),
+                    Positioned(
+                        right: 10,
+                        top: 6,
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.play_arrow,
+                              color: Colors.white,
+                              size: 14,
+                            ),
+                            Text("183万",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 14))
+                          ],
+                        )),
+                  ],
+                ),
+              ),
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.only(left: 20),
+                width: 220,
+                height: 140,
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      "听完这些歌，恭喜你获得了与孤独和解的能力",
+                      style: TextStyle(color: Colors.black45, fontSize: 18),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.music_video,
+                            color: Colors.redAccent,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 8),
+                            child: Text(
+                              "网易云音乐",
+                              style: TextStyle(color: Colors.black38),
+                            ),
+                          ),
+                          Icon(Icons.navigate_next, color: Colors.black38),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 15),
+                      width: 220,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            '"我好孤独。"',
+                            style: TextStyle(color: Colors.black54),
+                          ),
+                          Icon(Icons.navigate_next, color: Colors.black54)
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          )
+          ,Container(
+            // alignment: Alignment(1,0),
+            padding: EdgeInsets.only(top: 15),
+            margin:EdgeInsets.only(top: 20),
+            height: 80,
+            // color: Colors.white,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                ClipRRect(
-                  child: Image.network(
-                    "http://p.qpic.cn/music_cover/HZnqT8B6sibc2iaxSb6biaOAReu5nQvU4LNMd9kQDCaCWmlxJnVPPKnQA/300?n=1",
-                    // width: 300,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                Positioned(
-                  left: 10,
-                  top: 10,
-                  child: Text("VIP",
-                      style: TextStyle(color: Colors.white, fontSize: 14)),
-                ),
-                Positioned(
-                    right: 10,
-                    top: 6,
-                    child: Row(
-                      children: <Widget>[
-                        Icon(
-                          Icons.play_arrow,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                        Text("183万",
-                            style: TextStyle(color: Colors.white, fontSize: 14))
-                      ],
-                    )),
-              ],
-            ),
-          ),
-          Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.only(left: 20),
-            width: 220,
-            height: 150,
-            // color: Colors.black,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  "听完这些歌，恭喜你获得了与孤独和解的能力",
-                  style: TextStyle(color: Colors.black45, fontSize: 18),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: Row(
+                InkWell(
+                  onTap: (){},
+                  child: Column(
                     children: <Widget>[
-                      Icon(
-                        Icons.music_video,
-                        color: Colors.redAccent,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Text(
-                          "网易云音乐",
-                          style: TextStyle(color: Colors.black38),
-                        ),
-                      ),
-                      Icon(
-                        Icons.navigate_next,
-                        color: Colors.black38
-                      ),
+                      Icon(Icons.home,size: 28,color: Colors.white,),
+                      Text("导航1",style: TextStyle(color: Colors.white),)
                     ],
+
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 15),
-                  width: 220,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                InkWell(
+                  onTap: (){},
+                  child: Column(
                     children: <Widget>[
-                      Text('"我好孤独。"',style: TextStyle(color: Colors.black54),),
-                      Icon(Icons.navigate_next,color: Colors.black54)
+                      Icon(Icons.home,size: 28,color: Colors.white,),
+                      Text("导航1",style: TextStyle(color: Colors.white),)
                     ],
+
+                  ),
+                ),
+                InkWell(
+                  onTap: (){},
+                  child: Column(
+                    children: <Widget>[
+                      Icon(Icons.home,size: 28,color: Colors.white,),
+                      Text("导航1",style: TextStyle(color: Colors.white),)
+                    ],
+
+                  ),
+                ),
+                InkWell(
+                  onTap: (){},
+                  child: Column(
+                    children: <Widget>[
+                      Icon(Icons.home,size: 28,color: Colors.white,),
+                      Text("导航1",style: TextStyle(color: Colors.white),)
+                    ],
+
+                  ),
+                ),
+                InkWell(
+                  onTap: (){},
+                  child: Column(
+                    children: <Widget>[
+                      Icon(Icons.home,size: 28,color: Colors.white,),
+                      Text("导航1",style: TextStyle(color: Colors.white),)
+                    ],
+
                   ),
                 )
               ],
