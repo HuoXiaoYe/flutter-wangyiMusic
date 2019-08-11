@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import "package:flutter_swiper/flutter_swiper.dart";
 
 import "../../config/resource.dart";
+import "../songList/songlist.dart";
 
 class Search extends StatefulWidget {
   @override
@@ -181,7 +182,11 @@ class RecommendSongList extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context)=>new SongList()
+        ));
+      },
     );
   }
 
