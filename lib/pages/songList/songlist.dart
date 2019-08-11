@@ -192,13 +192,55 @@ class Intro extends StatelessWidget {
                     )),
               ],
             ),
-          )
-          ,Container(
+          ),
+          Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.only(left: 20),
             width: 220,
-            // height: 100,
-            color: Colors.black,
+            height: 150,
+            // color: Colors.black,
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "听完这些歌，恭喜你获得了与孤独和解的能力",
+                  style: TextStyle(color: Colors.black45, fontSize: 18),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.music_video,
+                        color: Colors.redAccent,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8),
+                        child: Text(
+                          "网易云音乐",
+                          style: TextStyle(color: Colors.black38),
+                        ),
+                      ),
+                      Icon(
+                        Icons.navigate_next,
+                        color: Colors.black38
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 15),
+                  width: 220,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('"我好孤独。"',style: TextStyle(color: Colors.black54),),
+                      Icon(Icons.navigate_next,color: Colors.black54)
+                    ],
+                  ),
+                )
+              ],
+            ),
           )
-       
         ],
       ),
     );
