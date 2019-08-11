@@ -75,18 +75,72 @@ class MyAppBar extends StatelessWidget {
           child: Container(
             width: 500,
             height: 80,
-            color: Colors.red,
+            color: Color.fromRGBO(145, 15, 25, 1),
           ),
         ),
         Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(top: 10),
           alignment: Alignment.center,
           width: 500,
           height: 80,
           color: Colors.transparent,
-          child: Text(
-            "我假装是导航栏",
-            style: TextStyle(fontSize: 28, color: Colors.white),
+          child: Row(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.navigate_before,
+                    size: 48,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "歌单",
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 1),
+                      child: Text(
+                        "编辑推荐：或许这个宇宙中，也有很多和我一样的人吧",
+                        style: TextStyle(color: Colors.white, fontSize: 11),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: 18,
+                  top: 20,
+                ),
+                child: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 30,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 18, top: 2),
+                child: Text(
+                  "...",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      fontSize: 30),
+                ),
+              )
+            ],
           ),
         )
       ],
@@ -105,9 +159,19 @@ class Intro extends StatelessWidget {
 }
 
 class SongData extends StatelessWidget {
-  final List mylist = [Colors.red, Colors.blue, Colors.green,Colors.red, Colors.blue, Colors.green,Colors.red, Colors.blue, Colors.green];
+  final List mylist = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.red,
+    Colors.blue,
+    Colors.green
+  ];
   Widget _item(item) {
-    return Container(height: 100, color:item);
+    return Container(height: 100, color: item);
   }
 
   @override
@@ -115,7 +179,7 @@ class SongData extends StatelessWidget {
     return Container(
       // height: 1200,
       child: Column(
-        children: mylist.map((item)=>_item(item)).toList(),
+        children: mylist.map((item) => _item(item)).toList(),
       ),
     );
   }
