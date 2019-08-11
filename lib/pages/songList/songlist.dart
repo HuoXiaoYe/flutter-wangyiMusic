@@ -75,7 +75,7 @@ class MyAppBar extends StatelessWidget {
           child: Container(
             width: 500,
             height: 80,
-            color: Color.fromRGBO(145, 15, 25, 1),
+            color: Color.fromRGBO(54, 53, 61, 1),
           ),
         ),
         Container(
@@ -153,7 +153,54 @@ class Intro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      color: Colors.lightBlue,
+      color: Color.fromRGBO(54, 53, 61, 0.5),
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: 20, top: 15),
+            alignment: Alignment.center,
+            height: 300,
+            width: 150,
+            child: Stack(
+              children: <Widget>[
+                ClipRRect(
+                  child: Image.network(
+                    "http://p.qpic.cn/music_cover/HZnqT8B6sibc2iaxSb6biaOAReu5nQvU4LNMd9kQDCaCWmlxJnVPPKnQA/300?n=1",
+                    // width: 300,
+                  ),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                Positioned(
+                  left: 10,
+                  top: 10,
+                  child: Text("VIP",
+                      style: TextStyle(color: Colors.white, fontSize: 14)),
+                ),
+                Positioned(
+                    right: 10,
+                    top: 6,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.play_arrow,
+                          color: Colors.white,
+                          size: 14,
+                        ),
+                        Text("183万",
+                            style: TextStyle(color: Colors.white, fontSize: 14))
+                      ],
+                    )),
+              ],
+            ),
+          )
+          ,Container(
+            width: 220,
+            // height: 100,
+            color: Colors.black,
+          )
+       
+        ],
+      ),
     );
   }
 }
