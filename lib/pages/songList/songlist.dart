@@ -75,7 +75,7 @@ class MyAppBar extends StatelessWidget {
           child: Container(
             width: 500,
             height: 80,
-            color: Color.fromRGBO(54, 53, 61, 1),
+            color: Colors.pink,
           ),
         ),
         Container(
@@ -86,17 +86,16 @@ class MyAppBar extends StatelessWidget {
           color: Colors.transparent,
           child: Row(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 5),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(
-                    Icons.navigate_before,
-                    size: 48,
-                    color: Colors.white,
-                  ),
+              IconButton(
+                onPressed: () {
+                  // Navigator.pop(context);
+                  // Navigator.of(context).pop();
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.navigate_before,
+                  size: 48,
+                  color: Colors.black38,
                 ),
               ),
               Container(
@@ -107,13 +106,13 @@ class MyAppBar extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       "歌单",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.black38, fontSize: 18),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 1),
                       child: Text(
                         "编辑推荐：或许这个宇宙中，也有很多和我一样的人吧",
-                        style: TextStyle(color: Colors.white, fontSize: 11),
+                        style: TextStyle(color: Colors.black38, fontSize: 11),
                       ),
                     )
                   ],
@@ -126,7 +125,7 @@ class MyAppBar extends StatelessWidget {
                 ),
                 child: Icon(
                   Icons.search,
-                  color: Colors.white,
+                  color: Colors.black38,
                   size: 30,
                 ),
               ),
@@ -136,7 +135,7 @@ class MyAppBar extends StatelessWidget {
                   "...",
                   style: TextStyle(
                       fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      color: Colors.black38,
                       fontSize: 30),
                 ),
               )
@@ -154,12 +153,23 @@ class Intro extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 40),
       height: 335,
-      color: Color.fromRGBO(54, 53, 61, 0.5),
+
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(54, 53, 61, 0.5),
+        // color: Colors.blue,
+        image: DecorationImage(
+          image: NetworkImage(
+              "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565689518074&di=27a4b386e20e7c772171e328cc248853&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201502%2F08%2F20150208174429_wnhM5.jpeg"),
+          fit: BoxFit.fill,
+          // colorFilter:ColorFilter.mode(Colors.blue, BlendMode.luminosity),
+        ),
+      ),
       // color: Colors.pink,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Row( // 顶部下方图片文字
+          Row(
+            // 顶部下方图片文字
             children: <Widget>[
               Container(
                 margin: EdgeInsets.only(left: 20, top: 15),
@@ -171,7 +181,7 @@ class Intro extends StatelessWidget {
                   children: <Widget>[
                     ClipRRect(
                       child: Image.network(
-                        "http://p.qpic.cn/music_cover/HZnqT8B6sibc2iaxSb6biaOAReu5nQvU4LNMd9kQDCaCWmlxJnVPPKnQA/300?n=1",
+                        "http://p.qpic.cn/music_cover/YqQNFQNJiaSkibexzichdYOoNEGDeYgkNukmO5NA2JqLqx63rgHrP0X5A/300?n=1",
                         // width: 300,
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -180,7 +190,7 @@ class Intro extends StatelessWidget {
                       left: 10,
                       top: 10,
                       child: Text("VIP",
-                          style: TextStyle(color: Colors.white, fontSize: 14)),
+                          style: TextStyle(color: Colors.black38, fontSize: 14)),
                     ),
                     Positioned(
                         right: 10,
@@ -189,12 +199,12 @@ class Intro extends StatelessWidget {
                           children: <Widget>[
                             Icon(
                               Icons.play_arrow,
-                              color: Colors.white,
+                              color: Colors.black38,
                               size: 14,
                             ),
                             Text("183万",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 14))
+                                    color: Colors.black38, fontSize: 14))
                           ],
                         )),
                   ],
@@ -248,65 +258,95 @@ class Intro extends StatelessWidget {
                 ),
               ),
             ],
-          )
-          ,Container(
+          ),
+          Container(
             // alignment: Alignment(1,0),
             padding: EdgeInsets.only(top: 15),
-            margin:EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: 20),
             height: 80,
-            // color: Colors.white,
+            // color: Colors.black38,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Column(
                     children: <Widget>[
-                      Icon(Icons.home,size: 28,color: Colors.white,),
-                      Text("导航1",style: TextStyle(color: Colors.white),)
+                      Icon(
+                        Icons.home,
+                        size: 28,
+                        color: Colors.black38,
+                      ),
+                      Text(
+                        "导航1",
+                        style: TextStyle(color: Colors.black38),
+                      )
                     ],
-
                   ),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Column(
                     children: <Widget>[
-                      Icon(Icons.home,size: 28,color: Colors.white,),
-                      Text("导航1",style: TextStyle(color: Colors.white),)
+                      Icon(
+                        Icons.home,
+                        size: 28,
+                        color: Colors.black38,
+                      ),
+                      Text(
+                        "导航1",
+                        style: TextStyle(color: Colors.black38),
+                      )
                     ],
-
                   ),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Column(
                     children: <Widget>[
-                      Icon(Icons.home,size: 28,color: Colors.white,),
-                      Text("导航1",style: TextStyle(color: Colors.white),)
+                      Icon(
+                        Icons.home,
+                        size: 28,
+                        color: Colors.black38,
+                      ),
+                      Text(
+                        "导航1",
+                        style: TextStyle(color: Colors.black38),
+                      )
                     ],
-
                   ),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Column(
                     children: <Widget>[
-                      Icon(Icons.home,size: 28,color: Colors.white,),
-                      Text("导航1",style: TextStyle(color: Colors.white),)
+                      Icon(
+                        Icons.home,
+                        size: 28,
+                        color: Colors.black38,
+                      ),
+                      Text(
+                        "导航1",
+                        style: TextStyle(color: Colors.black38),
+                      )
                     ],
-
                   ),
                 ),
                 InkWell(
-                  onTap: (){},
+                  onTap: () {},
                   child: Column(
                     children: <Widget>[
-                      Icon(Icons.home,size: 28,color: Colors.white,),
-                      Text("导航1",style: TextStyle(color: Colors.white),)
+                      Icon(
+                        Icons.home,
+                        size: 28,
+                        color: Colors.black38,
+                      ),
+                      Text(
+                        "导航1",
+                        style: TextStyle(color: Colors.black38),
+                      )
                     ],
-
                   ),
                 )
               ],
