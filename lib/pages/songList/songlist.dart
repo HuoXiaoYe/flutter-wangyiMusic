@@ -430,7 +430,7 @@ class SongData extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: 40,
-                    itemBuilder: (context,index)=>_songItem(index),
+                    itemBuilder: (context, index) => _songItem(index),
                     // itemBuilder: (context,index)=>,
                   )
                 ],
@@ -442,7 +442,7 @@ class SongData extends StatelessWidget {
     );
   }
 
-  Widget _songItem(index){
+  Widget _songItem(index) {
     return Container(
       height: 60,
       margin: EdgeInsets.only(top: 10),
@@ -452,65 +452,102 @@ class SongData extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 20),
             child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 30,
-                  alignment: Alignment.center,
-                  // color: Colors.red,
-                  child:Text((index+1).toString(),style: TextStyle(fontSize: 24,color: Colors.black54),)
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  // color: Colors.black,
+                  child: Row(
                     children: <Widget>[
-                      Text("小星星(Remastered ver.)",style: TextStyle(fontSize: 16),),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(right: 4,top: 4),
-                            alignment: Alignment.center,
-                            width: 20,
-                            height: 12,
-                            child: Text("VIP",style: TextStyle(fontSize: 10,color: Colors.red),),
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 1,color: Colors.red)
+                      Container(
+                          width: 30,
+                          alignment: Alignment.center,
+                          // color: Colors.red,
+                          child: Text(
+                            (index + 1).toString(),
+                            style:
+                                TextStyle(fontSize: 24, color: Colors.black54),
+                          )),
+                      Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.only(left: 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "小星星(Remastered ver.)",
+                              style: TextStyle(fontSize: 16),
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(right: 4,top: 4),
-                            alignment: Alignment.center,
-                            width: 20,
-                            height: 12,
-                            child: Text("SVIP",style: TextStyle(fontSize: 10,color: Colors.red),),
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 1,color: Colors.red)
-                            ),
-                          ),
-                          Container(
-                             margin: EdgeInsets.only(right: 4,top: 4),
-                            alignment: Alignment.center,
-                            width: 20,
-                            height: 12,
-                            child: Text("SQ",style: TextStyle(fontSize: 10,color: Colors.red),),
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 1,color: Colors.red)
-                            ),
-                          ),
-                          Text("周振南-Little Star-V的序曲",style: TextStyle(color: Colors.black54),)
-                        ],
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(right: 4, top: 4),
+                                  alignment: Alignment.center,
+                                  width: 20,
+                                  height: 12,
+                                  child: Text(
+                                    "VIP",
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.red),
+                                  ),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 1, color: Colors.red)),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(right: 4, top: 4),
+                                  alignment: Alignment.center,
+                                  width: 20,
+                                  height: 12,
+                                  child: Text(
+                                    "SVIP",
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.red),
+                                  ),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 1, color: Colors.red)),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(right: 4, top: 4),
+                                  alignment: Alignment.center,
+                                  width: 20,
+                                  height: 12,
+                                  child: Text(
+                                    "SQ",
+                                    style: TextStyle(
+                                        fontSize: 10, color: Colors.red),
+                                  ),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 1, color: Colors.red)),
+                                ),
+                                Text(
+                                  "周振南-Little Star-V的序曲",
+                                  style: TextStyle(color: Colors.black54),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 50),
+                  width: 40,
+                  height: 60,
+                  // color: Colors.red,
+                  child: Icon(Icons.play_arrow,color: Colors.grey,),
                 )
               ],
             ),
           ),
-
         ],
       ),
     );
@@ -530,7 +567,10 @@ class SongData extends StatelessWidget {
               children: <Widget>[
                 Icon(Icons.music_note),
                 Text("播放全部"),
-                Text("(共40首)",style: TextStyle(color: Colors.grey),)
+                Text(
+                  "(共40首)",
+                  style: TextStyle(color: Colors.grey),
+                )
               ],
             ),
           ),
@@ -547,8 +587,14 @@ class SongData extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.add,color: Colors.white,),
-                  Text("收藏(22942)",style: TextStyle(color: Colors.white),),
+                  Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "收藏(22942)",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ],
               ),
             ),
