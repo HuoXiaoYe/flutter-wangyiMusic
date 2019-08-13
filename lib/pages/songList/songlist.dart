@@ -89,7 +89,8 @@ class MyAppBar extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   // Navigator.pop(context);
-                  // Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+
                   Navigator.pop(context);
                 },
                 icon: Icon(
@@ -368,8 +369,8 @@ class SongData extends StatelessWidget {
         children: <Widget>[
           Container(
               width: MediaQuery.of(context).size.width,
-              height: 800,
-              alignment:Alignment.topLeft,
+              height: 2925,
+              alignment: Alignment.topLeft,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -378,7 +379,11 @@ class SongData extends StatelessWidget {
                     height: 60,
                     child: Row(
                       children: <Widget>[
-                        Icon(Icons.music_video,size: 28,color: Colors.red,),
+                        Icon(
+                          Icons.music_video,
+                          size: 28,
+                          color: Colors.red,
+                        ),
                         Padding(
                           padding: EdgeInsets.only(left: 5),
                           child: Text("VIP专享,开通VIP畅听无阻"),
@@ -392,8 +397,11 @@ class SongData extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         InkWell(
-                          onTap: (){},
-                          child: Text("新客仅5元>",style: TextStyle(color: Colors.grey),),
+                          onTap: () {},
+                          child: Text(
+                            "新客仅5元>",
+                            style: TextStyle(color: Colors.grey),
+                          ),
                         )
                       ],
                     ),
@@ -403,21 +411,146 @@ class SongData extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)
-                  )
-              )
-          ),
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)))),
           Positioned(
             top: 60,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: 740,
+              // height:2740,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       topRight: Radius.circular(20))),
+              child: Column(
+                children: <Widget>[
+                  _itemHeader(),
+                  ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: 40,
+                    itemBuilder: (context,index)=>_songItem(index),
+                    // itemBuilder: (context,index)=>,
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _songItem(index){
+    return Container(
+      height: 60,
+      margin: EdgeInsets.only(top: 10),
+      // color: Colors.blue,
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  width: 30,
+                  alignment: Alignment.center,
+                  // color: Colors.red,
+                  child:Text((index+1).toString(),style: TextStyle(fontSize: 24,color: Colors.black54),)
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  margin: EdgeInsets.only(left: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text("小星星(Remastered ver.)",style: TextStyle(fontSize: 16),),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(right: 4,top: 4),
+                            alignment: Alignment.center,
+                            width: 20,
+                            height: 12,
+                            child: Text("VIP",style: TextStyle(fontSize: 10,color: Colors.red),),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1,color: Colors.red)
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 4,top: 4),
+                            alignment: Alignment.center,
+                            width: 20,
+                            height: 12,
+                            child: Text("SVIP",style: TextStyle(fontSize: 10,color: Colors.red),),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1,color: Colors.red)
+                            ),
+                          ),
+                          Container(
+                             margin: EdgeInsets.only(right: 4,top: 4),
+                            alignment: Alignment.center,
+                            width: 20,
+                            height: 12,
+                            child: Text("SQ",style: TextStyle(fontSize: 10,color: Colors.red),),
+                            decoration: BoxDecoration(
+                              border: Border.all(width: 1,color: Colors.red)
+                            ),
+                          ),
+                          Text("周振南-Little Star-V的序曲",style: TextStyle(color: Colors.black54),)
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+
+        ],
+      ),
+    );
+  }
+
+  Widget _itemHeader() {
+    return Container(
+      alignment: Alignment.center,
+      height: 60,
+      // color: Colors.red,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.music_note),
+                Text("播放全部"),
+                Text("(共40首)",style: TextStyle(color: Colors.grey),)
+              ],
+            ),
+          ),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              margin: EdgeInsets.only(right: 20),
+              alignment: Alignment.center,
+              width: 110,
+              height: 38,
+              decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.add,color: Colors.white,),
+                  Text("收藏(22942)",style: TextStyle(color: Colors.white),),
+                ],
+              ),
             ),
           )
         ],
