@@ -81,7 +81,11 @@ class NavBar extends StatelessWidget {
           Text(item["desc"])
         ],
       ),
-      onTap: () {},
+      onTap: () {
+         Navigator.of(context).push(MaterialPageRoute(
+          builder: (context)=>new SongList()
+        ));
+      },
     );
   }
 

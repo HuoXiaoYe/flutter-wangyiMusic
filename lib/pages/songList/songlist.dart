@@ -152,7 +152,7 @@ class Intro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 40),
-      height: 335,
+      height: 320,
 
       decoration: BoxDecoration(
         color: Color.fromRGBO(54, 53, 61, 0.5),
@@ -190,7 +190,8 @@ class Intro extends StatelessWidget {
                       left: 10,
                       top: 10,
                       child: Text("VIP",
-                          style: TextStyle(color: Colors.black38, fontSize: 14)),
+                          style:
+                              TextStyle(color: Colors.black38, fontSize: 14)),
                     ),
                     Positioned(
                         right: 10,
@@ -359,27 +360,33 @@ class Intro extends StatelessWidget {
 }
 
 class SongData extends StatelessWidget {
-  final List mylist = [
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.red,
-    Colors.blue,
-    Colors.green,
-    Colors.red,
-    Colors.blue,
-    Colors.green
-  ];
-  Widget _item(item) {
-    return Container(height: 100, color: item);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       // height: 1200,
-      child: Column(
-        children: mylist.map((item) => _item(item)).toList(),
+      child: Stack(
+        children: <Widget>[
+          Container(
+              width: MediaQuery.of(context).size.width,
+              height: 800,
+              decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)))),
+          Positioned(
+            top: 60,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 740,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20))),
+            ),
+          )
+        ],
       ),
     );
   }
