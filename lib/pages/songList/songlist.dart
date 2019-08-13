@@ -369,11 +369,45 @@ class SongData extends StatelessWidget {
           Container(
               width: MediaQuery.of(context).size.width,
               height: 800,
+              alignment:Alignment.topLeft,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(left: 20),
+                    height: 60,
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.music_video,size: 28,color: Colors.red,),
+                        Padding(
+                          padding: EdgeInsets.only(left: 5),
+                          child: Text("VIP专享,开通VIP畅听无阻"),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 20),
+                    height: 60,
+                    child: Row(
+                      children: <Widget>[
+                        InkWell(
+                          onTap: (){},
+                          child: Text("新客仅5元>",style: TextStyle(color: Colors.grey),),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
               decoration: BoxDecoration(
                   color: Colors.grey[300],
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20)))),
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20)
+                  )
+              )
+          ),
           Positioned(
             top: 60,
             child: Container(
