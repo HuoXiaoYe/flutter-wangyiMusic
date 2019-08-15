@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "../play/play.dart";
 
 class SongList extends StatelessWidget {
   @override
@@ -430,7 +431,7 @@ class SongData extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: 40,
-                    itemBuilder: (context, index) => _songItem(index),
+                    itemBuilder: (context, index) => _songItem(index,context),
                     // itemBuilder: (context,index)=>,
                   )
                 ],
@@ -442,8 +443,14 @@ class SongData extends StatelessWidget {
     );
   }
 
-  Widget _songItem(index) {
-    return Container(
+  Widget _songItem(index,context) {
+    return InkWell(
+      onTap:(){
+        Navigator.of(context).push(MaterialPageRoute(
+          builder:(context)=> new SongPlay()
+        ));
+      },
+      child: Container(
       height: 60,
       margin: EdgeInsets.only(top: 10),
       // color: Colors.blue,
@@ -550,6 +557,7 @@ class SongData extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 
