@@ -38,15 +38,44 @@ class SongPlay extends StatelessWidget {
                     )
                   ],
                 ),
-              )
-              ,Container(
+              ),
+              Container(
                 child: Icon(Icons.share),
               )
             ],
           ),
         ),
-        body: Center(
-          child: Text("nihao"),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          // color: Colors.red,
+          child: Column(
+            children: <Widget>[
+              Flex(
+                direction: Axis.vertical,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top: 78,bottom: 75),
+                      width: 300,
+                      height: 300,
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(Radius.circular(200))),
+                      // color: Colors.red,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(200)),
+                        child: Image.network(
+                          "http://qpic.y.qq.com/music_cover/AhbCa0vazSRDjEJhYwthgoxuDAGq1YzV4yAoTrgsiaEnM5SU56fDKvA/300?n=1",
+                          fit: BoxFit.fill,
+                        ),
+                      )),
+                  Container(
+                    height: 150,
+                    color: Colors.blue,
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
